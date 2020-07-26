@@ -54,5 +54,17 @@ namespace NUnitTestProject1.Pages
             }
             return driver.FindElement(by);
         }
+
+        public static bool ElementExists(this IWebDriver driver, By by)
+        {
+            try
+            {
+                return driver.FindElement(by).Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
     }
 }

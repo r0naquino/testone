@@ -23,6 +23,7 @@ namespace NUnitTestProject1
             string password = "123";
             LoginPage loginPage = this.basePage.GoToLoginPage();
             loginPage.InputUsernameAndPassword(userName, password);
+            Assert.IsTrue(loginPage.VerifyUsernameErrorExists(), "Invalid email address error is not displayed");
         }
     }
 }
