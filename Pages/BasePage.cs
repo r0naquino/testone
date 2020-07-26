@@ -12,33 +12,17 @@ namespace NUnitTestProject1.Pages
     {
         IWebDriver driver;
 
-        public BasePage()
+        public BasePage(IWebDriver driver)
         {
-            driver = new ChromeDriver();
+            this.driver = driver;
         }
 
         private readonly string url = "https://shopsm.com";
         private readonly By loginLink = By.XPath("//span[text()='Log in']");
 
-        public IWebDriver GetDriver()
-        {
-            if (driver == null)
-            {
-                driver = new ChromeDriver();
-                return driver;
-            }
-            else
-            {
-                return driver;
-            }
-        }
-
         public void CloseDriver()
         {
-            while (driver != null)
-            {
-                driver.Quit();
-            }
+            driver.Quit();
         }
 
         public bool AssertLoad()
@@ -48,13 +32,14 @@ namespace NUnitTestProject1.Pages
 
         public void OpenURL()
         {
-            this.GetDriver().Manage().Window.Maximize();
-            this.GetDriver().Navigate().GoToUrl(url);
+            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl(url);
         }
 
-        public void GoToLoginPage()
+        public LoginPage GoToLoginPage()
         {
-            this.GetDriver().FindElementUntil(loginLink, 10).Click();
+            driver.FindElementUntil(loginLink, 10).Click();
+            return new LoginPage(driver);
         }
 
     }
