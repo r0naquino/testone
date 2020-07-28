@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G7J9BMzBnptXXbzCcWDDYY9elZdcGIU3uXP/ycHKObNKdGkVFRBcJqUKd215o6EOWyjAL0CX0aABt05MqxsJew==",
+  "dgSpecHash": "hPS66olnPR00ZbxlyO80ww0DnG6PzuuZI1hqEBBrOC06aJG7QAXg+kAG4k+qLUn1gle8gc5zExB4qmltHs2+dA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Turon\\source\\repos\\NUnitTestProject1\\NUnitTestProject1.csproj",
+  "projectFilePath": "C:\\Users\\Turon\\source\\repos\\NUnitTestProject1\\SwagLabs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Turon\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",
     "C:\\Users\\Turon\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

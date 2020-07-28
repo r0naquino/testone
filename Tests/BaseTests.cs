@@ -1,27 +1,27 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Internal;
-using NUnitTestProject1.Pages;
+using SwagLabs.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using NUnit.Framework.Internal.Commands;
 
-namespace NUnitTestProject1
+namespace SwagLabs.Tests
 {
     public class BaseTests
     {
-        public static IWebDriver driver = new ChromeDriver();
-        
-        public BasePage basePage = new BasePage(driver);
-
+        IWebDriver driver;
+        public BasePage basePage;
         [SetUp]
         public void StartTest()
         {
-            basePage.OpenURL();
+            driver = new ChromeDriver();
+            basePage = new BasePage(driver);
         }
 
-        [TearDownAttribute]
+        [TearDown]
         public void EndTest()
         {
             basePage.CloseDriver();

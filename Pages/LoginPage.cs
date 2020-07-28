@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace NUnitTestProject1.Pages
+namespace SwagLabs.Pages
 {
     public class LoginPage : BasePage
     {
-
         IWebDriver driver;
 
         public LoginPage(IWebDriver driver) : base(driver)
@@ -16,22 +15,29 @@ namespace NUnitTestProject1.Pages
             this.driver = driver;
         }
 
-        private readonly By userNameField = By.CssSelector("input[type='email']");
-        private readonly By passwordField = By.CssSelector("input[type='password']");
-        private readonly By loginButton = By.XPath("//button[text()='Login']");
-        private readonly By userNameError = By.XPath("//div[text()='Please enter a valid email address']");
+        private readonly By userNameField = By.CssSelector("input[id='user-name']");
+        private readonly By passwordField = By.CssSelector("input[id='password']");
+        private readonly By loginButton = By.XPath("//input[@id='login-button']");
+        private readonly By loginError = By.CssSelector("h3[data-test='error']");
 
-
-        public void InputUsernameAndPassword(string username, string password)
+        public HomePage InputUsernameAndPassword(string username, string password)
         {
             this.driver.FindElementUntil(userNameField, 10).SendKeys(username);
             this.driver.FindElement(passwordField).SendKeys(password);
             this.driver.FindElement(loginButton).Click();
+            return new HomePage(driver);
         }
 
-        public bool VerifyUsernameErrorExists()
+        public bool VerifyLoginErrorMessage(string errorMessage)
         {
-            return this.driver.ElementExists(userNameError);
+            if (this.driver.ElementExists(loginError))
+            {
+                return errorMessage == this.driver.FindElement(loginError).Text;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

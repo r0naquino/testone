@@ -4618,9 +4618,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Turon\\source\\repos\\NUnitTestProject1\\NUnitTestProject1.csproj",
-      "projectName": "NUnitTestProject1",
-      "projectPath": "C:\\Users\\Turon\\source\\repos\\NUnitTestProject1\\NUnitTestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Turon\\source\\repos\\NUnitTestProject1\\SwagLAbs.csproj",
+      "projectName": "SwagLAbs",
+      "projectPath": "C:\\Users\\Turon\\source\\repos\\NUnitTestProject1\\SwagLAbs.csproj",
       "packagesPath": "C:\\Users\\Turon\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Turon\\source\\repos\\NUnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",

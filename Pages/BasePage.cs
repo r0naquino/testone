@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace NUnitTestProject1.Pages
+namespace SwagLabs.Pages
 {
     public class BasePage
     {
@@ -17,8 +17,7 @@ namespace NUnitTestProject1.Pages
             this.driver = driver;
         }
 
-        private readonly string url = "https://shopsm.com";
-        private readonly By loginLink = By.XPath("//span[text()='Log in']");
+        private readonly string url = "https://www.saucedemo.com/";
 
         public void CloseDriver()
         {
@@ -30,15 +29,10 @@ namespace NUnitTestProject1.Pages
             return false;
         }
 
-        public void OpenURL()
+        public LoginPage GoToLoginPage()
         {
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(url);
-        }
-
-        public LoginPage GoToLoginPage()
-        {
-            driver.FindElementUntil(loginLink, 10).Click();
             return new LoginPage(driver);
         }
 
@@ -64,6 +58,22 @@ namespace NUnitTestProject1.Pages
             catch (NoSuchElementException)
             {
                 return false;
+            }
+        }
+
+        public static void WaitUntilPageIsLoaded(this IWebDriver driver, int timeoutInSeconds)
+        {
+            var javaScriptExecutor = driver as IJavaScriptExecutor;
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+
+            try
+            {
+                Func<IWebDriver, bool> readyCondition = webDriver => (bool)javaScriptExecutor.ExecuteScript("return (document.readyState == 'complete' && jQuery.active == 0)");
+                wait.Until(readyCondition);
+            }
+            catch (InvalidOperationException)
+            {
+                wait.Until(wd => javaScriptExecutor.ExecuteScript("return document.readyState").ToString() == "complete");
             }
         }
     }
