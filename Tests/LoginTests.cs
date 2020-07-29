@@ -2,6 +2,7 @@ using NUnit.Framework;
 using SwagLabs.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using NUnit.Framework.Interfaces;
 
 namespace SwagLabs.Tests
 {

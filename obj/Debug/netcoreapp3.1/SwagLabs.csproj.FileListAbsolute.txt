@@ -91,8 +91,13 @@ C:\Users\Turon\source\repos\NUnitTestProject1\bin\Debug\netcoreapp3.1\zh-Hant\Mi
 C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.csprojAssemblyReference.cache
 C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.AssemblyInfoInputs.cache
 C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.AssemblyInfo.cs
-C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.csproj.CoreCompileInputs.cache
 C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.csproj.CopyComplete
 C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.dll
 C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.pdb
 C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.genruntimeconfig.cache
+C:\Users\Turon\source\repos\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Turon\source\repos\NUnitTestProject1\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Turon\source\repos\NUnitTestProject1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Turon\source\repos\NUnitTestProject1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Turon\source\repos\NUnitTestProject1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Turon\source\repos\NUnitTestProject1\obj\Debug\netcoreapp3.1\SwagLabs.csproj.CoreCompileInputs.cache
