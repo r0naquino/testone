@@ -1,16 +1,11 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Internal;
 using SwagLabs.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
 using System.Text;
-using NUnit.Framework.Internal.Commands;
-using OpenQA.Selenium.Support.Events;
-using OpenQA.Selenium.Support.Extensions;
 using NUnit.Framework.Interfaces;
-using System.Drawing.Imaging;
+using System.IO;
 
 namespace SwagLabs.Tests
 {
@@ -38,7 +33,12 @@ namespace SwagLabs.Tests
 
                 string testName = TestContext.CurrentContext.Test.MethodName;
 
-                ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile(@"C:\SeleniumScreenshot\FailedTest_" + testName + "_" + date + ".png", ScreenshotImageFormat.Png);
+                if (!Directory.Exists(@"C:\SeleniumScreenshot\FailedTests_"+ DateTime.Now.ToString("MM/dd/yyyy").Replace("/","_")))
+                {
+                    Directory.CreateDirectory(@"C:\SeleniumScreenshot\FailedTests_" + DateTime.Now.ToString("MM/dd/yyyy").Replace("/", "_"));
+                }
+
+                ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile(@"C:\SeleniumScreenshot\FailedTests_" + DateTime.Now.ToString("MM/dd/yyyy").Replace("/", "_") + @"\FailedTest_" + testName + "_" + date + ".png", ScreenshotImageFormat.Png);
             }
 
             basePage.CloseDriver();
